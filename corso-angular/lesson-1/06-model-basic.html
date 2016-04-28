@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>AngularJS test</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+	</head>
+
+	<body>
+		<h1>Basic model</h1>
+
+		<!--
+			The ng-init directive should (almost) never be used. Also
+			the usage of ng-click before is deprecated. The right place
+			for initialization and event handling logic is the
+			controller.
+		-->
+		<div ng-app ng-init="cities = [
+			{ id: 1, name: 'Rome', country: 'Italy' },
+			{ id: 2, name: 'Paris', country: 'France' },
+			{ id: 3, name: 'Berlin', country: 'Germany' },
+			{ id: 4, name: 'London', country: 'United Kingdom' }
+			]">
+
+			<ul>
+				<li ng-repeat="city in cities">
+					<strong>{{::city.name}}</strong> ({{::city.country}})
+				</li>
+			</ul>
+			<!--
+				Interesting: make it a table
+
+			<table border="1">
+				<thead>
+					<tr>
+						<th>City</th>
+						<th>Country</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="city in cities">
+						<td>{{::city.name}}</td>
+						<td>{{::city.country}}</td>
+					</tr>
+				</tbody>
+			</table>
+			-->
+
+			<button ng-click="cities.shift()">Remove first</button>
+		</div>
+
+	</body>
+</html>

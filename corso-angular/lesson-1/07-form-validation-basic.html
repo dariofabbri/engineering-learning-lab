@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en" data-ng-app>
+	<head>
+		<meta charset="utf-8">
+		<title>AngularJS test</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+		<style type="text/css">
+			.css-form input.ng-invalid.ng-touched {
+				background-color: #FA787E;
+			}
+
+			.css-form input.ng-valid.ng-touched {
+				background-color: #78FA89;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>Form validation</h1>
+
+		<form novalidate name="form1" ng-init="user={}" class="css-form">
+			Name: <input type="text" ng-model="user.name" required /><br />
+			E-mail: <input type="email" ng-model="user.email" required /><br />
+			Gender: 
+				<input type="radio" ng-model="user.gender" value="male" />male
+				<input type="radio" ng-model="user.gender" value="female" />female<br />
+			<input type="submit" ng-disabled="!form1.$valid" value="Save" />
+		</form>
+
+		<div>
+			<pre>user = {{user | json}}</pre>
+		</div>
+	</body>
+</html>

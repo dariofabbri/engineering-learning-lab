@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en" data-ng-app>
+	<head>
+		<meta charset="utf-8">
+		<title>AngularJS test</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+	</head>
+
+	<body>
+		<h1>Data binding (with conditional block)</h1>
+		<p>My name is: <input type="text" data-ng-model="name"></p>
+		<p data-ng-if="name">Hello, {{name}}!</p>
+	</body>
+</html>

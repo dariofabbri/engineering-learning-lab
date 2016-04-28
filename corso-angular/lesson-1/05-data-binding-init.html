@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" data-ng-app>
+	<head>
+		<meta charset="utf-8">
+		<title>AngularJS test</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+	</head>
+
+	<body>
+		<h1>Data binding (with init)</h1>
+
+		<div data-ng-init="qty=1;price=2.34">
+			<b>Calcolo dell'importo</b>
+			<div>
+				Quantità: <input type="number" min="0" data-ng-model="qty">
+			</div>
+			<div>
+				Prezzo unitario: <input type="number" min="0" data-ng-model="price">
+			</div>
+			<div>
+				<b>Totale:</b> {{qty * price | currency:'€'}}
+			</div>
+		</div>
+	</body>
+</html>
