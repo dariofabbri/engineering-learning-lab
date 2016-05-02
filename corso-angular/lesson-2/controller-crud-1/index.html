@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+	<head>
+		<meta charset="utf-8">
+		<title>AngularJS test</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+		<script src="app.js"></script>
+		<script src="crudController.js"></script>
+	</head>
+
+	<body ng-controller="CrudController">
+		<h1>Crud controller example</h1>
+		<h2>List of cities</h2>
+		<ul>
+			<li ng-repeat="city in cities">
+				<strong>{{city.name}}</strong>, {{city.country}};
+			</li>
+		</ul>
+		<p>Listed {{cities.length}} cities</p>
+	</body>
+</html>
