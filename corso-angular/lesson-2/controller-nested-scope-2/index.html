@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+	<head>
+		<meta charset="utf-8">
+		<title>AngularJS test</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+		<script src="app.js"></script>
+		<script src="firstController.js"></script>
+		<script src="secondController.js"></script>
+		<script src="thirdController.js"></script>
+	</head>
+
+	<body>
+
+		<div ng-controller="FirstController">
+			<h1>{{title}}</h1>
+			<hr>
+
+			<div ng-controller="SecondController">
+				<h1>{{$parent.title}}</h1>
+				<h2>{{title}}</h2>
+				<hr>
+
+				<div ng-controller="ThirdController">
+					<h1>{{$parent.$parent.title}}</h1>
+					<h2>{{$parent.title}}</h2>
+					<h3>{{title}}</h3>
+					<hr>
+				</div>
+
+			</div>
+
+		</div>
+	</body>
+</html>

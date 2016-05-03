@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+	<head>
+		<meta charset="utf-8">
+		<title>AngularJS test</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+		<script src="app.js"></script>
+		<script src="crudController.js"></script>
+	</head>
+
+	<body ng-controller="CrudController">
+		<h1>Crud controller example</h1>
+
+		<h2>Edit form</h2>
+		<form name="editForm">
+			<p>Id: <input type="text" ng-model="city.id" disabled></p>
+			<p>City name: <input type="text" ng-model="city.name"></p>
+			<p>County: <input type="text" ng-model="city.country"></p>
+			<button ng-click="add()">Add</button>
+			<button ng-click="update()">Update</button>
+		</form>
+
+		<h2>List of cities</h2>
+
+		<table ng-show="cities.length">
+			<thead>
+				<tr>
+					<th>City</th>
+					<th>Country</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="city in cities">
+					<td><strong>{{city.name}}</strong></td>
+					<td>{{city.country}}</td>
+					<td>
+						<button ng-click="removeItem(city.id)">Remove</button>
+						<button ng-click="editItem(city.id)">Edit</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<p>Listed {{cities.length}} cities</p>
+	</body>
+</html>
