@@ -11,6 +11,27 @@
 		app.controller('BasicController', function($scope) {
 			$scope.name = 'World';
 		});
+
+		/*
+		// Inline variant.
+		//
+		angular.module('app', []);
+			.controller('BasicController', function($scope) {
+				$scope.name = 'World';
+			});
+		*/
+
+		/*
+		// Extra verbose, showing the creation of the module and
+		// the subsequent retrieval.
+		//
+		angular.module('app', []);
+		angular.module('app')
+			.controller('BasicController', function($scope) {
+				$scope.name = 'World';
+			});
+		*/
+
 	</script>
 
 	<body ng-controller="BasicController">
