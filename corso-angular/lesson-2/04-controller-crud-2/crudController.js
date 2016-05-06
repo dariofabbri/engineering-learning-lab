@@ -4,6 +4,9 @@
 	angular.module('app')
 		.controller('CrudController', ['$scope', '$log', function ($scope, $log) {
 			
+			// First AngularJS Controller responsibility: 
+			// scope initialization
+			//
 			$scope.cities = [
 				{ id: 1, name: 'Rome', country: 'Italy' },
 				{ id: 2, name: 'Paris', country: 'France' },
@@ -12,6 +15,9 @@
 				{ id: 5, name: 'Madrid', country: 'Spain' }
 			];
 
+			// Second AngularJS Controller responsibility: 
+			// add behavior to scope
+			//
 			$scope.removeItem = function (id) {
 				$log.info('Clicked on item id: ' + id);
 
@@ -24,6 +30,8 @@
 			}
 
 			/*
+			// A more "functional" variant of the above code.
+			//
 			$scope.removeItem = function (id) {
 				$log.info('Clicked on item id: ' + id);
 

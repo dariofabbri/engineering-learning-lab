@@ -4,6 +4,9 @@
 	angular.module('app')
 		.controller('CrudController', function ($scope) {
 			
+			// First AngularJS Controller responsibility: 
+			// scope initialization
+			//
 			$scope.cities = [
 				{ id: 1, name: 'Rome', country: 'Italy' },
 				{ id: 2, name: 'Paris', country: 'France' },
