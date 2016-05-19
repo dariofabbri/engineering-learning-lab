@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+	<head>
+		<meta charset="utf-8">
+		<title>AngularJS test</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.0/angular-ui-router.min.js"></script>
+		<script src="app.js"></script>
+		<script src="contacts/listController.js"></script>
+		<script src="contacts/detailController.js"></script>
+	</head>
+
+	<body>
+		<h1>Contact manager application</h1>
+		<h2>Main menu</h2>
+		<ul>
+			<li><a ui-sref="home">Home</a></li>
+			<li><a ui-sref="contacts">Contacts</a></li>
+		</ul>
+		<div ui-view></div>
+	</body>
+</html>

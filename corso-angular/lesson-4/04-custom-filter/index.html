@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+	<head>
+		<meta charset="utf-8">
+		<title>AngularJS test</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+		<script src="app.js"></script>
+		<script src="controller.js"></script>
+		<script src="scrambleFilter.js"></script>
+	</head>
+
+	<body ng-controller="MyController as ctrl">
+		<h1>Custom filter</h1>
+		<ul>
+			<li ng-repeat="name in ctrl.names">
+				<b>{{name}}</b> -&gt; {{name | scramble}} / {{name | scramble:2}}
+				<!--
+				<b>{{name | uppercase}}</b> -&gt; {{name | scramble | uppercase}} / {{name | scramble:2 | uppercase}}
+				-->
+			</li>
+		</ul>
+	</body>
+</html>

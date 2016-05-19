@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+	<head>
+		<meta charset="utf-8">
+		<title>AngularJS test</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+		<script src="app.js"></script>
+		<script src="controller.js"></script>
+	</head>
+
+	<body ng-controller="MyController as ctrl">
+		<h1>Filter in the view</h1>
+		<!--
+		<p>Filter: <input type="text" ng-model="clause"></p>
+		-->
+		<ul>
+			<li ng-repeat="city in ctrl.cities"><b>{{city.name}}</b> ({{city.country}})</li>
+			<!--
+			<li ng-repeat="city in ctrl.cities | filter:'it'"><b>{{city.name}}</b> ({{city.country}})</li>
+			<li ng-repeat="city in ctrl.cities | filter:clause"><b>{{city.name}}</b> ({{city.country}})</li>
+			-->
+		</ul>
+	</body>
+</html>
