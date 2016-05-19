@@ -23,5 +23,10 @@
 					templateUrl: "contacts/detail.html",
 					controller: 'ContactDetailCtrl as ctrl'
 				})
+				.state('contacts.edit', {
+					url: "/{id:int}/edit",
+					templateUrl: "contacts/edit.html",
+					controller: 'ContactDetailCtrl as ctrl'
+				})
 		});
 }());
