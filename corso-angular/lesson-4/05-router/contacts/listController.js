@@ -8,6 +8,8 @@
 
 				var me = this;
 
+				// This should be in a service!
+				//
 				$rootScope.contacts = [
 					{
 						id: 1,
