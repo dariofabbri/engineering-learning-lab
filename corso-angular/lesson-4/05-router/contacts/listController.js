@@ -3,8 +3,9 @@
 
 	angular.module('app')
 		.controller('ContactsListCtrl', [
+			'$state',
 			'$rootScope', 
-			function ($rootScope) {
+			function ($state, $rootScope) {
 
 				var me = this;
 
@@ -42,6 +43,14 @@
 				];
 
 				me.contacts = $rootScope.contacts;
+
+				// Test the programmatic navigation of ui-router.
+				//
+				me.goToRandomContact = function () {
+
+					var id = me.contacts[Math.floor(Math.random() * me.contacts.length)].id;
+					$state.go('contacts.detail', { id: id });
+				}
 		}]);
 }());
 
