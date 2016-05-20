@@ -18,6 +18,7 @@
 			<!--
 			<li ng-repeat="city in ctrl.cities | filter:'it'"><b>{{city.name}}</b> ({{city.country}})</li>
 			<li ng-repeat="city in ctrl.cities | filter:clause"><b>{{city.name}}</b> ({{city.country}})</li>
+			<li ng-repeat="city in ctrl.cities | orderBy:'country' | limitTo:2:1"><b>{{city.name}}</b> ({{city.country}})</li>
 			-->
 		</ul>
 	</body>

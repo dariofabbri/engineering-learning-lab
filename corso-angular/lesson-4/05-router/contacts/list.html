@@ -2,7 +2,7 @@
 
 <ul>
 	<li ng-repeat="contact in ctrl.contacts">
-		<a ui-sref="contacts.detail({id: contact.id})">{{contact.name}} {{contact.surname}}</a>
+		<a ui-sref=".detail({id: contact.id})">{{contact.name}} {{contact.surname}}</a>
 	</li>
 </ul>
 
