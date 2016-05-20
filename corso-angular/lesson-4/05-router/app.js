@@ -5,7 +5,12 @@
 		.config([
 			'$stateProvider', 
 			'$urlRouterProvider', 
-			function ($stateProvider, $urlRouterProvider) {
+			'$locationProvider',
+			function ($stateProvider, $urlRouterProvider, $locationProvider) {
+
+				// Set desired HTML5 mode for $locationProvider.
+				//
+				$locationProvider.html5Mode(false);
 
 				// The default state is 'home'.
 				//
