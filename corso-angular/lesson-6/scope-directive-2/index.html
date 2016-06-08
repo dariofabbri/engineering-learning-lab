@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+	<head>
+		<meta charset="utf-8">
+		<title>AngularJS test</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+		<script src="app.js"></script>
+		<script src="myController.js"></script>
+		<script src="businessCard.js"></script>
+	</head>
+
+	<body ng-controller="myController">
+		<h1>Directive and scope example</h1>
+
+		<div>
+			Name: <input type="text" ng-model="subject.name"><br/>
+			Surname: <input type="text" ng-model="subject.surname"><br/>
+			Job title: <input type="text" ng-model="subject.jobTitle"><br/>
+			Email: <input type="email" ng-model="subject.email"><br/>
+			Address: <input type="text" ng-model="subject.address"><br/>
+			Phone: <input type="text" ng-model="subject.phone"><br/>
+		</div>
+
+		<br/>
+
+		<business-card></business-card>
+	</body>
+</html>
