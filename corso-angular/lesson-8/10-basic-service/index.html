@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+	<head>
+		<meta charset="utf-8">
+		<title>AngularJS test</title>
+
+		<!-- AngularJS -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+
+		<!-- Application -->
+		<script src="app.js"></script>
+		<script src="myController.js"></script>
+		<script src="anotherController.js"></script>
+		<script src="myService.js"></script>
+	</head>
+
+	<body>
+		<h1>Basic service example</h1>
+
+		<div ng-controller="MyController as ctrl">
+			<p>Hello, {{ctrl.name}}!</p>
+		</div>
+
+		<div ng-controller="AnotherController as ctrl">
+			<p>Hello, {{ctrl.name}}!</p>
+		</div>
+	</body>
+</html>

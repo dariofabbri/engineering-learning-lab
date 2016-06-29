@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+	<head>
+		<meta charset="utf-8">
+		<title>AngularJS test</title>
+
+		<!-- AngularJS -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.3.3/ui-bootstrap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.3.3/ui-bootstrap-tpls.min.js"></script>
+
+		<!-- Application -->
+		<script src="app.js"></script>
+		<script src="myController.js"></script>
+		<script src="calculatorService.js"></script>
+	</head>
+
+	<body ng-controller="MyController as ctrl">
+		<h1>Simple calculator</h1>
+
+		<form class="form-horizontal" role="form">
+			<div class="form-group form-group-lg">
+				<label class="col-sm-3 control-label" for="lg">First operand:</label>
+				<div class="col-sm-3">
+					<input type="text" class="form-control" ng-model="ctrl.first">
+				</div>
+			</div>
+			<div class="form-group form-group-lg">
+				<label class="col-sm-3 control-label" for="lg">Second operand:</label>
+				<div class="col-sm-3">
+					<input type="text" class="form-control" ng-model="ctrl.second">
+				</div>
+			</div>
+			<div class="form-group form-group-lg">
+				<label class="col-sm-3 control-label" for="lg">Result:</label>
+				<div class="col-sm-3">
+					<input type="text" class="form-control" ng-model="ctrl.result">
+				</div>
+			</div>
+
+			<button class="btn btn-default" ng-click="ctrl.sum()">+</button>
+			<button class="btn btn-default" ng-click="ctrl.subtract()">-</button>
+			<button class="btn btn-default" ng-click="ctrl.multiply()">*</button>
+			<button class="btn btn-default" ng-click="ctrl.divide()">/</button>
+		</form>
+
+	</body>
+</html>

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+	<head>
+		<meta charset="utf-8">
+		<title>AngularJS test</title>
+
+		<!-- AngularJS -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.3.3/ui-bootstrap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.3.3/ui-bootstrap-tpls.min.js"></script>
+
+		<!-- Application -->
+		<script src="app.js"></script>
+		<script src="myController.js"></script>
+	</head>
+
+	<body>
+		<h1>F1 info application</h1>
+
+		<div ng-controller="MyController as ctrl">
+
+			<form class="form-horizontal" role="form">
+				<div class="form-group form-group-lg">
+					<label class="col-sm-2 control-label" for="lg">Choose season:</label>
+					<div class="col-sm-5">
+						<input type="text" 
+							ng-model="ctrl.selectedSeason" 
+							ng-change="ctrl.resetLoadedData()"
+							placeholder="Start typing..." 
+							uib-typeahead="item.season for item in ctrl.seasons | filter:$viewValue" 
+							typeahead-no-results="ctrl.noResults" 
+							class="form-control">
+					</div>
+				</div>
+				<div ng-show="ctrl.noResults">
+					<i class="glyphicon glyphicon-remove"></i> No Results Found
+				</div>
+
+				<div ng-show="ctrl.selectedSeason">
+					<button class="btn btn-default" ng-click="ctrl.loadDrivers()">Drivers</button>
+					<button class="btn btn-default" ng-click="ctrl.loadResults()">Race results</button>
+				</div>
+			</form>
+
+			<br>
+
+			<table ng-show="ctrl.drivers" class="table table-striped">
+				<tr>
+					<th>First name</th>
+					<th>Last name</th> 
+					<th>Date of birth</th>
+					<th>Wikipedia</th>
+				</tr>
+				<tr ng-repeat="driver in ctrl.drivers">
+					<td>{{driver.givenName}}</td>
+					<td>{{driver.familyName}}</td> 
+					<td>{{driver.dateOfBirth}}</td>
+					<td><a href="{{driver.url}}" target="_blank"><span class="glyphicon glyphicon-link"></span></a></td>
+				</tr>
+			</table>
+
+			<table ng-show="ctrl.results" class="table table-striped">
+				<tr>
+					<th>Date</th>
+					<th>Race</th> 
+					<th>Circuit</th>
+					<th>Winner</th>
+					<th>Second place</th>
+					<th>Third place</th>
+					<th>Wikipedia</th>
+				</tr>
+				<tr ng-repeat="result in ctrl.results">
+					<td>{{result.date}}</td>
+					<td>{{result.raceName}}</td> 
+					<td>{{result.Circuit.circuitName}}</td>
+					<td>{{result.Results[0].Driver.givenName}} {{result.Results[0].Driver.familyName}} ({{result.Results[0].Constructor.name}})</td>
+					<td>{{result.Results[1].Driver.givenName}} {{result.Results[1].Driver.familyName}} ({{result.Results[1].Constructor.name}})</td>
+					<td>{{result.Results[2].Driver.givenName}} {{result.Results[2].Driver.familyName}} ({{result.Results[2].Constructor.name}})</td>
+					<td><a href="{{result.url}}" target="_blank"><span class="glyphicon glyphicon-link"></span></a></td>
+				</tr>
+			</table>
+
+		</div>
+
+	</body>
+</html>
