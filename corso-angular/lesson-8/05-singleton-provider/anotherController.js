@@ -6,6 +6,7 @@
 			'myProvider',
 			function (myProvider) {
 				
+				console.log('Inside AnotherController');
 				var me = this;
 
 				me.name = myProvider;
