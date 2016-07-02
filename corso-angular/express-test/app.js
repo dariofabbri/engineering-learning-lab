@@ -25,12 +25,13 @@ app.use('/login', login);
 //----------
 app.use('/api', security.jwtChecker);
 app.use('/api/events', events);
-app.use('/api/users', usersApi);
+
 
 //admin
 //---------
 app.use('/api/admin', security.adminChecker);
 app.use('/api/admin/events', events);
+app.use('/api/admin/users', usersApi);
 
 
 
