@@ -5,6 +5,7 @@ var events = require('./routes/events');
 var security = require('./routes/security');
 var login = require('./routes/login');
 var usersApi = require('./routes/users');
+var cors = require('cors');
 
 var app = express();
 
@@ -12,6 +13,9 @@ var app = express();
 CONFIGURATION
  */
 app.set('superSecret', 'Shh!NonDiciamolaANessuno');
+//app.options('/login',function(){console.log('ciao');});
+// app.options('/login',cors({credentials: true, origin: '*',preflightContinue:true}));
+app.use('/', cors({credentials: true, origin: '*',preflightContinue:true}));
 
 /*
 ROUTING
@@ -32,6 +36,7 @@ app.use('/api/events', events);
 app.use('/api/admin', security.adminChecker);
 app.use('/api/admin/events', events);
 app.use('/api/admin/users', usersApi);
+
 
 
 

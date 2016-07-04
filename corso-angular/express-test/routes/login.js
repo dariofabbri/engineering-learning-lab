@@ -9,9 +9,11 @@ router.post('/', function(req, res) {
       success: false,
       message: 'Wrong credentials',
     });
+    return;
   }
 
   daouser.getUserByUid(req.query.uid, function(err, user) {
+    console.log(res);
     if (user && user.password === req.query.password) {
       // create a token
       var token = jwt.sign(user, req.app.get('superSecret'));
