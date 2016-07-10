@@ -16,6 +16,7 @@ app.set('superSecret', 'Shh!NonDiciamolaANessuno');
 //app.options('/login',function(){console.log('ciao');});
 // app.options('/login',cors({credentials: true, origin: '*',preflightContinue:true}));
 app.use('/', cors({credentials: true, origin: '*',preflightContinue:true}));
+app.use('/api/users', cors({credentials: true, origin: '*',preflightContinue:true}));
 
 /*
 ROUTING
@@ -29,6 +30,7 @@ app.use('/login', login);
 //----------
 app.use('/api', security.jwtChecker);
 app.use('/api/events', events);
+app.use('/api/users', usersApi);
 
 
 //admin
